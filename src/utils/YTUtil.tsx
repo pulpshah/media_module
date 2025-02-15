@@ -31,3 +31,36 @@ export function getVideoEmbedUrl(url: string): string | null {
       return null;
     }
   }
+
+ export const isYouTubeUrl = (url: string): boolean => {
+    try {
+      const parsedUrl = new URL(url);
+      return (
+        parsedUrl.hostname.includes("youtube.com") || parsedUrl.hostname.includes("youtu.be")
+      );
+    } catch {
+      return false;
+    }
+  };
+
+export const extractVideoId = (url: string): string | null => {
+  try {
+    const parsedUrl = new URL(url);
+
+    if (parsedUrl.searchParams.has("v")) {
+      return parsedUrl.searchParams.get("v");
+    }
+
+    if (parsedUrl.pathname.startsWith("/embed/")) {
+      return parsedUrl.pathname.split("/embed/")[1];
+    }
+
+    if (parsedUrl.hostname === "youtu.be") {
+      return parsedUrl.pathname.substring(1);
+    }
+
+    return null;
+  } catch {
+    return null;
+  }
+};

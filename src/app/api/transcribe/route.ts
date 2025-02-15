@@ -7,8 +7,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "No URL provided" }, { status: 400 });
   }
 
-  console.log("Hello");
-
   const deepgram = createClient(process.env.DEEPGRAM_API_KEY!);
   try {
     const { result, error } = await deepgram.listen.prerecorded.transcribeUrl(

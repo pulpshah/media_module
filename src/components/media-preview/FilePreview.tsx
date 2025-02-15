@@ -39,15 +39,17 @@ export function FilePreview({ file }: FilePreviewProps) {
   }, [file]);
 
   if (file.type.startsWith("image/") && objectUrl) {
-    return <ImagePreview url={objectUrl} alt={file.name} />;
+    return <ImagePreview url={objectUrl} alt={file.name} file={file} />;
   }
 
   if (file.type.startsWith("video/") && objectUrl) {
-    return <VideoPreview urls={[{ url: objectUrl, type: file.type }]} />;
+    return (
+      <VideoPreview urls={[{ url: objectUrl, type: file.type }]} file={file} />
+    );
   }
 
   if (file.type.startsWith("audio/") && objectUrl) {
-    return <AudioPreview url={objectUrl} type={file.type} />;
+    return <AudioPreview url={objectUrl} type={file.type} file={file} />;
   }
 
   if (file.type === "application/pdf" && objectUrl) {
