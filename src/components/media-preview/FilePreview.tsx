@@ -53,7 +53,7 @@ export function FilePreview({ file }: FilePreviewProps) {
   }
 
   if (file.type === "application/pdf" && objectUrl) {
-    return <PdfPreview url={objectUrl} title={file.name} />;
+    return <PdfPreview url={objectUrl} title={file.name} file={file}/>;
   }
 
   if (content) {
