@@ -21,7 +21,7 @@ export const useActivityTracking = () => {
       timestamp: Date.now(),
       data,
     });
-    console.log("Page Visibility:", data);
+    // console.log("Page Visibility:", data);
   };
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export const useActivityTracking = () => {
       timestamp: Date.now(),
       data: initialData,
     });
-    console.log("Page Navigation:", initialData);
+    // console.log("Page Navigation:", initialData);
 
     return () => {
       document.removeEventListener("visibilitychange", handleVisibilityChange);

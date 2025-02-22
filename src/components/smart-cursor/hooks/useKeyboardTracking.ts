@@ -29,20 +29,20 @@ export const useKeyboardTracking = () => {
       },
     };
     keystrokesRef.current.push(keystrokeData);
-    console.log("Keystroke:", keystrokeData);
+    // console.log("Keystroke:", keystrokeData);
   };
 
   const handleTextSelection = () => {
     const selection = window.getSelection();
     if (selection && selection.toString().trim()) {
-      console.log("Text Selection:", {
-        selectedText: selection.toString(),
-        timestamp: new Date(),
-        range: {
-          start: selection.anchorOffset,
-          end: selection.focusOffset,
-        },
-      });
+      // console.log("Text Selection:", {
+      //   selectedText: selection.toString(),
+      //   timestamp: new Date(),
+      //   range: {
+      //     start: selection.anchorOffset,
+      //     end: selection.focusOffset,
+      //   },
+      // });
     }
   };
 

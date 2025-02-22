@@ -148,14 +148,14 @@ export const usePageData = () => {
         buttons,
         images,
       });
-      console.log("Updated Page Data:", {
-        url: window.location.href,
-        title: document.title,
-        structuredText,
-        links,
-        buttons,
-        images,
-      });
+      // console.log("Updated Page Data:", {
+      //   url: window.location.href,
+      //   title: document.title,
+      //   structuredText,
+      //   links,
+      //   buttons,
+      //   images,
+      // });
     };
 
     extractPageData();

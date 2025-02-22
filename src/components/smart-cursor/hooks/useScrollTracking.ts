@@ -21,10 +21,10 @@ export const useScrollTracking = () => {
         depth: scrollPercent,
         timestamp: Date.now(),
       });
-      console.log("Scroll Depth:", {
-        percent: scrollPercent.toFixed(2) + "%",
-        timestamp: new Date(),
-      });
+      // console.log("Scroll Depth:", {
+      //   percent: scrollPercent.toFixed(2) + "%",
+      //   timestamp: new Date(),
+      // });
     }
   };
 
